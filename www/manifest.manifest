@@ -1,0 +1,59 @@
+CACHE MANIFEST
+# 2015-09-13:v1.3
+
+CACHE:
+#pages
+	index.html
+#CSS File
+	css.css
+#libraries
+	https://ajax.googleapis.com/ajax/libs/jquerymobile/1.4.5/jquery.mobile.min.css
+	https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js
+	https://ajax.googleapis.com/ajax/libs/jquerymobile/1.4.5/jquery.mobile.min.js
+	https://cdnjs.cloudflare.com/ajax/libs/mustache.js/0.8.1/mustache.min.js
+	https://ajax.googleapis.com/ajax/libs/jquerymobile/1.4.5/images/ajax-loader.gif 
+	Javascript/spin.min.js
+#Javascript Pages
+	Javascript/Schedule.js
+	Javascript/TeamsJS.js
+#Server Side Code
+	APIData.php
+
+#Images
+	images/splash.png
+	images/nba.png
+	images/error.png
+#Team Images
+	images/teams/583ece50-fb46-11e1-82cb-f4ce4684ea4c.png 
+	images/teams/583ed056-fb46-11e1-82cb-f4ce4684ea4c.png 
+	images/teams/583eca2f-fb46-11e1-82cb-f4ce4684ea4c.png
+	images/teams/583eca88-fb46-11e1-82cb-f4ce4684ea4c.png
+	images/teams/583ecdfb-fb46-11e1-82cb-f4ce4684ea4c.png
+	images/teams/583ec825-fb46-11e1-82cb-f4ce4684ea4c.png
+	images/teams/583ecda6-fb46-11e1-82cb-f4ce4684ea4c.png
+	images/teams/583ec87d-fb46-11e1-82cb-f4ce4684ea4c.png
+	images/teams/583ed157-fb46-11e1-82cb-f4ce4684ea4c.png
+	images/teams/583ec70e-fb46-11e1-82cb-f4ce4684ea4c.png
+	images/teams/583ecea6-fb46-11e1-82cb-f4ce4684ea4c.png
+	images/teams/583ec5fd-fb46-11e1-82cb-f4ce4684ea4c.png
+	images/teams/583ecae2-fb46-11e1-82cb-f4ce4684ea4c.png
+	images/teams/583ecf50-fb46-11e1-82cb-f4ce4684ea4c.png
+	images/teams/583ecd4f-fb46-11e1-82cb-f4ce4684ea4c.png
+	images/teams/583ecfa8-fb46-11e1-82cb-f4ce4684ea4c.png
+	images/teams/583ecb3a-fb46-11e1-82cb-f4ce4684ea4c.png
+	images/teams/583ecc9a-fb46-11e1-82cb-f4ce4684ea4c.png
+	images/teams/583ec7cd-fb46-11e1-82cb-f4ce4684ea4c.png
+	images/teams/583ecfff-fb46-11e1-82cb-f4ce4684ea4c.png
+	images/teams/583ec8d4-fb46-11e1-82cb-f4ce4684ea4c.png
+	images/teams/583ecb8f-fb46-11e1-82cb-f4ce4684ea4c.png
+	images/teams/583ed102-fb46-11e1-82cb-f4ce4684ea4c.png
+	images/teams/583ed0ac-fb46-11e1-82cb-f4ce4684ea4c.png
+	images/teams/583ec928-fb46-11e1-82cb-f4ce4684ea4c.png
+	images/teams/583ec97e-fb46-11e1-82cb-f4ce4684ea4c.png
+	images/teams/583eccfa-fb46-11e1-82cb-f4ce4684ea4c.png
+	images/teams/583ec773-fb46-11e1-82cb-f4ce4684ea4c.png
+	images/teams/583ecefd-fb46-11e1-82cb-f4ce4684ea4c.png
+	images/teams/583ec9d6-fb46-11e1-82cb-f4ce4684ea4c.png
+
+NETWORK:
+*

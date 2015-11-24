@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="87af8df1-0883-4508-986b-ca0483916a08" name="Default" comment="second commit">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www" afterPath="$PROJECT_DIR$/www" />
-    </list>
+    <list default="true" id="87af8df1-0883-4508-986b-ca0483916a08" name="Default" comment="second commit" />
     <ignored path="NBAapp-cordova.iws" />
     <ignored path=".idea/workspace.xml" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -568,7 +566,7 @@
       <created>1448378995331</created>
       <option name="number" value="Default" />
       <updated>1448378995331</updated>
-      <workItem from="1448378997413" duration="377000" />
+      <workItem from="1448378997413" duration="539000" />
     </task>
     <task id="LOCAL-00001" summary="second commit">
       <created>1448379130158</created>
@@ -580,7 +578,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="377000" />
+    <option name="totallyTimeSpent" value="539000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="41" y="-777" width="1280" height="773" extended-state="0" />
