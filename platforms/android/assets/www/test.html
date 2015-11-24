@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head data-role="header">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+<script>
+
+		var delay = 1000; //1 seconds
+		//for (i = 0; i < 500; i++) {
+		    setTimeout(function(){
+					var url = 'https://api.flickr.com/services/rest/method=flickr.photos.search&api_key=3c76b6b882164694d0a47353d0e74d58&lat=35.175097&lon=33.363858&radius=10&extras=geo%2C+owner_name%2C+path_alias&per_page=500&page=' + 0 + '&format=json&jsoncallback=?&api_sig=22cccc7509156b06aa02e251323339df';
+					var getData = $.getJSON({
+									 type: "GET",
+									 url: url,
+							 });
+							 getData.done(function (data) {
+									 console.log('Loaded');
+							 });
+
+				$.ajax()
+		    }, delay);
+		//}
+
+	</script>
+
+</head>
+<body>
+
+</body>
+</html>

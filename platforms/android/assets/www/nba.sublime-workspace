@@ -1,0 +1,448 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"ap",
+				"apiKey"
+			],
+			[
+				"api",
+				"apiV"
+			],
+			[
+				"error",
+				"errorThrown"
+			],
+			[
+				"ser",
+				"serverFileName"
+			],
+			[
+				"file",
+				"serverFileName"
+			],
+			[
+				"sch",
+				"scheduleJSON"
+			],
+			[
+				"sche",
+				"scheduleData"
+			],
+			[
+				"sc",
+				"scheduleJSON"
+			],
+			[
+				"mail",
+				"mailServerFileName"
+			],
+			[
+				"days",
+				"daysGames"
+			],
+			[
+				"tea",
+				"teamsJSON"
+			],
+			[
+				"sor",
+				"sorrinKey"
+			],
+			[
+				"json",
+				"scheduleJSON"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "Javascript/Schedule.js",
+			"settings":
+			{
+				"buffer_size": 20849,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "index.html",
+			"settings":
+			{
+				"buffer_size": 17650,
+				"line_ending": "Unix"
+			}
+		}
+	],
+	"build_system": "",
+	"build_system_choices":
+	[
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 267.0,
+		"last_filter": "Package Control: i",
+		"selected_items":
+		[
+			[
+				"Package Control: i",
+				"Package Control: Install Package"
+			],
+			[
+				"Package Control: in",
+				"Package Control: Install Package"
+			],
+			[
+				"install",
+				"Package Control: Install Package"
+			]
+		],
+		"width": 449.0
+	},
+	"console":
+	{
+		"height": 126.0,
+		"history":
+		[
+			"import urllib.request,os,sys; exec(\"if sys.version_info < (3,) or os.name != 'nt': raise OSError('This code is for Windows ST3 only!')\"); pr='Preferences.sublime-settings'; ip='ignored_packages'; n='Package Control'; s=sublime.load_settings(pr); ig=s.get(ip); ig.append(n); s.set(ip,ig); sublime.save_settings('Preferences.sublime-settings'); pf=n+'.sublime-package'; urllib.request.install_opener(urllib.request.build_opener(urllib.request.ProxyHandler())); by=urllib.request.urlopen('https://packagecontrol.io/'+pf.replace(' ','%20')).read(); open(os.path.join(sublime.installed_packages_path(),pf),'wb').write(by); ig.remove(n); s.set(ip,ig); sublime.save_settings(pr); print('Package Control: 3.0.0 upgrade successful!')",
+			"import urllib.request,os,hashlib; h = '2915d1851351e5ee549c20394736b442' + '8bc59f460fa1548d1514676163dafc88'; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); by = urllib.request.urlopen( 'http://packagecontrol.io/' + pf.replace(' ', '%20')).read(); dh = hashlib.sha256(by).hexdigest(); print('Error validating download (got %s instead of %s), please try manual install' % (dh, h)) if dh != h else open(os.path.join( ipp, pf), 'wb' ).write(by)"
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"expanded_folders":
+	[
+		"/Users/lefkatis/Box Sync/workspace/lefkatis.com/nba",
+		"/Users/lefkatis/Box Sync/workspace/lefkatis.com/nba/images",
+		"/Users/lefkatis/Box Sync/workspace/lefkatis.com/nba/Javascript",
+		"/Users/lefkatis/Box Sync/workspace/lefkatis.com/nba/jsonFiles"
+	],
+	"file_history":
+	[
+		"/Users/lefkatis/Box Sync/workspace/lefkatis.com/nba/nba.sublime-project",
+		"/Users/lefkatis/Library/Application Support/Sublime Text 3/Packages/Package Control/Package Control.sublime-settings",
+		"/Users/lefkatis/Box Sync/workspace/lefkatis.com/nba/Javascript/TeamsJS.js",
+		"/Users/lefkatis/Box Sync/workspace/lefkatis.com/nba/css.css",
+		"/Users/lefkatis/Box Sync/workspace/lefkatis.com/nba/APIData.php",
+		"/Users/lefkatis/Box Sync/workspace/lefkatis.com/nba/Javascript/Schedule.js",
+		"/Users/lefkatis/Box Sync/workspace/lefkatis.com/nba/index.html",
+		"/Users/lefkatis/Library/Application Support/Sublime Text 3/Packages/Default/Preferences.sublime-settings",
+		"/Users/lefkatis/Box Sync/Leto/aiwip-ios/Aiwip/Pods/Manifest.lock",
+		"/Users/lefkatis/Box Sync/workspace/lefkatis.com/nba/jsonFiles/scheduleJSON.json",
+		"/Users/lefkatis/Box Sync/workspace/lefkatis.com/nba/manifest.manifest",
+		"/Users/lefkatis/Box Sync/workspace/lefkatis.com/nba/manifest1.manifest",
+		"/Users/lefkatis/Box Sync/workspace/lefkatis.com/sftp-config.json",
+		"/Users/lefkatis/Box Sync/Leto/camelot-test/Prototype3Flow/Camelot/Podfile",
+		"/Users/lefkatis/Box Sync/Leto/sprung-ios/Podfile",
+		"/Users/lefkatis/Box Sync/Leto/aiwip-ios/Aiwip/Podfile",
+		"/Applications/Popcorn-Time.app/Contents/Resources/app.nw/node_modules/chromecast-js/pt-media-receiver.js"
+	],
+	"find":
+	{
+		"height": 35.0
+	},
+	"find_in_files":
+	{
+		"height": 93.0,
+		"where_history":
+		[
+			""
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"Content-Security-Policy",
+			"Content Security Policy\n",
+			"Content Security Policy \n",
+			"content",
+			"ajax",
+			"errorThr",
+			"error",
+			"ajax",
+			"APIData",
+			"ajax",
+			"serverFileName",
+			"Failed to load Schedule, offline",
+			"getScores",
+			"getScore",
+			"getSc",
+			"imagePath",
+			"getScore",
+			"calendar",
+			"get",
+			"getPla",
+			"sch",
+			"display",
+			"displat",
+			"datePopup",
+			"popup",
+			"share",
+			"mailPopup",
+			"POst",
+			"schedules",
+			"POST",
+			"share",
+			"console",
+			"serverFileName",
+			"ajax",
+			"consol",
+			"console.log",
+			"generateDaySchedule",
+			"serverFileName",
+			"empika ",
+			"renderAndShow",
+			"getPlayoffData",
+			"renderAndShow",
+			"schedule loaded",
+			"fail"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"selected": 1,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "Javascript/Schedule.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 20849,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								4803,
+								4837
+							]
+						],
+						"settings":
+						{
+							"incomplete_sync": null,
+							"remote_loading": false,
+							"synced": false,
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 1534.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "index.html",
+					"semi_transient": true,
+					"settings":
+					{
+						"buffer_size": 17650,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"incomplete_sync": null,
+							"remote_loading": false,
+							"synced": false,
+							"syntax": "Packages/HTML/HTML.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 256.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				}
+			]
+		},
+		{
+			"sheets":
+			[
+			]
+		},
+		{
+			"sheets":
+			[
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 23.0
+	},
+	"input":
+	{
+		"height": 31.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				2,
+				1
+			],
+			[
+				0,
+				1,
+				1,
+				2
+			],
+			[
+				1,
+				1,
+				2,
+				2
+			]
+		],
+		"cols":
+		[
+			0.0,
+			0.5,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			0.7,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"output.sftp":
+	{
+		"height": 100.0
+	},
+	"output.xdebug":
+	{
+		"height": 0.0
+	},
+	"pinned_build_system": "",
+	"project": "nba.sublime-project",
+	"replace":
+	{
+		"height": 42.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+		"xdebug":
+		{
+			"hide_conflict": false,
+			"restore_index":
+			{
+				"20":
+				{
+					"group": 0,
+					"index": 0
+				}
+			},
+			"restore_layout":
+			{
+				"cells":
+				[
+					[
+						0,
+						0,
+						1,
+						1
+					]
+				],
+				"cols":
+				[
+					0.0,
+					1.0
+				],
+				"rows":
+				[
+					0.0,
+					1.0
+				]
+			}
+		}
+	},
+	"show_minimap": true,
+	"show_open_files": true,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 219.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}

@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en" manifest="manifest.manifest"
+    <head data-role="header">
+        <meta name="author" content="Andreas Lefkatis" />
+        <!-- icons -->
+        <link href="images/ios/AppIcon/icon-58.png" rel="apple-touch-icon" sizes="58x58"/>
+        <link href="images/ios/AppIcon/icon-78.png" rel="apple-touch-icon" sizes="76x76" />
+        <link href="images/ios/AppIcon/icon-120.png" rel="apple-touch-icon" sizes="120x120" />
+        <link href="images/ios/AppIcon/icon-152.png" rel="apple-touch-icon" sizes="152x152" />
+        <link href="images/ios/AppIcon/icon-180.png" rel="apple-touch-icon" sizes="180x180" />
+        <link href="images/android/AppIcon/icon-128.png" rel="icon" sizes="128x128" />
+        <link href="images/android/AppIcon/icon-192.png" rel="icon" sizes="192x192" />
+        
+        <!-- css tags -->
+        <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jquerymobile/1.4.5/jquery.mobile.min.css" /> 
+        <link rel="stylesheet" type="text/css" href="css.css">
+
+        <!-- mobile tags -->
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black">
+        <meta name="mobile-web-app-capable" content="yes">
+
+        <!-- jquery and mustache files -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquerymobile/1.4.5/jquery.mobile.min.js"></script>
+       <!-- <script src="https://cdn.jtsage.com/datebox/1.4.5/jqm-datebox-1.4.5.core.min.js"></script> -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mustache.js/0.8.1/mustache.min.js"></script>
+        
+        <!-- my files -->
+        <script src="Javascript/Schedule.js"></script>
+        <script src="Javascript/TeamsJS.js"></script>
+        <script src="Javascript/spin.min.js"></script>
+
+        <script id="tmpl-schedule" type="text/mustache">
+            {{#games}}
+                <tr>
+                  <td class = "awayTeam" id = "{{away.id}}"><img src="{{imagePath}}{{away.id}}.png"><p>{{away.alias}}</p></td>
+                  <td class = "gameTime" id ='{{id}}'>vs</br><b>{{timeUTC}}</div></b></td>
+                  <td class = "homeTeam" id = "{{home.id}}"><p>{{home.alias}}</p><img src="{{imagePath}}{{home.id}}.png"></td>
+                </tr>
+            {{/games}}
+        </script>
+        <script id="tmpl-teams" type="text/mustache">
+            {{#conferences}}
+                <li data-role="list-divider">
+                        <h2>{{alias}}</h2>
+                </li>
+                    {{#teamsSorted}}
+                        <li data-id="{{id}}" id = "team{{id}}">
+                            <a id="teamList" href="#teamPage" data-transition="slideup">
+                                <img src="{{imagePath}}{{id}}.png">
+                                <h2>{{market}} {{name}}</h2>
+                                <p class="{{id}}record">{{division}} Division</p>
+                            </a>     
+                        </li>
+                    {{/teamsSorted}}
+            {{/conferences}} </script>
+        <script id="tmpl-team" type="text/mustache">
+            <img id="teamImage" src="{{imagePath}}{{id}}.png" alt="{{name}} image">
+            <p data-id="{{id}}"> 
+                <b>City:</b> {{market}} </br>
+                <b>Conference:</b> {{conference.alias}} </br>
+                <b>Division:</b> {{division.name}} </br>
+                <b>Coach:</b> <a class="coach" data-id="{{#coaches}}{{full_name}}{{/coaches}}" href="#popupMenu" data-rel="popup" data-transition="slideup">{{#coaches}}{{full_name}}{{/coaches}}</a></br>
+                <b>Venue:</b> <a data-id="{{venue.name}} {{market}}" href="#mapPopup" data-rel="popup" data-transition="slideup">{{venue.name}}</a>
+            </p>
+        </script>
+        <script id="tmpl-roster" type="text/mustache">
+            <table data-role="table" data-mode="columntoggle" class="ui-body-d ui-shadow table-stripe ui-responsive" id="teamRoster">
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>Player Name</th>
+                            <th data-priority="1" class="ui-table-priority-1">Pos</th>
+                            <th data-priority="2" class="ui-table-priority-2">Height</th>
+                            <th data-priority="2" class="ui-table-priority-2">Weight</th>
+                            <th data-priority="3" class="ui-table-priority-3">Years in NBA</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {{#players}}
+                            <tr>
+                              <td>{{jersey_number}}</td>
+                              <td><a data-id="{{full_name}}" href="#popupMenu" data-rel="popup" data-transition="slideup">{{full_name}}</a></td>
+                              <td class="ui-table-priority-1">{{primary_position}}</td>
+                              <td class="ui-table-priority-2">{{height}}&quot;</td>
+                              <td class="ui-table-priority-2">{{weight}} lbs</td>
+                              <td class="ui-table-priority-3">{{draft.year}}</td>
+                            </tr>
+                        {{/players}}
+                    </tbody>
+                </table>
+        </script>
+        <script id="tmpl-wStandings" type="text/mustache">
+                {{#teams}}
+                    <tr id= "standing{{id}}">
+                      <td>{{pos}}</td>
+                      <td><a data-id="{{id}}" href="#teamPage" data-transition="slideup">{{market}} {{name}}</a></td>
+                      <td class="ui-table-priority-1">{{wins}}</td>
+                      <td class="ui-table-priority-1">{{losses}}</td>
+                      <td class="ui-table-priority-2">{{win_pct}}</td>
+                      <td class="ui-table-priority-3">{{games_behind.league}}</td>
+                      <td class="ui-table-priority-2">{{last_10}}</td>
+                      <td class="ui-table-priority-3">{{streak.length}}</td>
+                    </tr>
+                {{/teams}}   </script>
+        <script id="tmpl-eStandings" type="text/mustache">
+                {{#teams}}
+                    <tr id= "standing{{id}}">
+                      <td>{{pos}}</td>
+                      <td><a data-id="{{id}}" href="#teamPage" data-transition="slideup">{{market}} {{name}}</a></td>
+                      <td class="ui-table-priority-1">{{wins}}</td>
+                      <td class="ui-table-priority-1">{{losses}}</td>
+                      <td class="ui-table-priority-2">{{win_pct}}</td>
+                      <td class="ui-table-priority-3">{{games_behind.league}}</td>
+                      <td class="ui-table-priority-2">{{last_10}}</td>
+                      <td class="ui-table-priority-3">{{streak.length}}</td>
+                    </tr>
+                {{/teams}}    </script>
+        <meta charset="utf-8" />
+        <title>NBA App</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    </head>
+    <body>
+        <div data-role="page" id="splashPage" data-title="NBA">
+        <img id="splash" src="images/splash.png" align="center" alt="">
+        </div>
+        <div data-role="page" id="schedule" data-title="NBA Schedule">
+            <header data-role="header" data-theme="b">
+                <img id="logo" src="images/nba.png" data-inline="true"/>
+                <a id="share" href="#mailPopup" data-rel="popup" data-role="button" class="ui-btn-right"data-inline="true" data-iconpos="notext" data-icon="action"></a>
+                <a id="refresh" href="#" data-role="button" class="ui-btn-right" data-inline="true" data-iconpos="notext" data-icon="refresh"></a>
+                <h1>Schedule</h1>
+            </header>
+            <article data-role="content">
+                <div id = "daysNavigation">
+                    <a href="#" id="previousDayButton" data-role="button" data-icon="carat-l" data-iconpos="notext" data-theme="b">Previous day</a>
+                    <p id="dateTitleUTC" data-theme="b"></p>
+                    <a href="#" id="nextDayButton" data-role="button" data-icon="carat-r" data-iconpos="notext" data-theme="b">Next day</a>
+                    <h5 id="offlineScheduleError" class="ui-bar ui-bar-a">Please connect to the internet for the updated schedule</h5>
+                </div>
+                <div id="gamesContent">
+                    <table id="scheduleTable" data-role="table" data-mode="columntoggle" class="ui-body-d ui-shadow table-stripe ui-responsive">
+                        <thead>
+                            <tr>
+                                <th data-priority="1">AWAY</th>
+                                <th data-priority="1"><a id="refreshScores" href="#" data-role="button" data-theme="e" data-inline="true" data-iconpos="notext" data-icon="recycle"></th>
+                                <th data-priority="1">HOME</th>
+                            </tr>
+                        </thead>
+                        <tbody id="gamesTable" align="center">
+                        </tbody>
+                    </table>   
+                    <h3 id="error"></h3> 
+                </div>
+            </article>
+            <div data-role="popup" id="mailPopup" data-position-to="window" data-theme="b" style="max-width:400px;">
+                <div data-role="header" data-theme='a'>
+                    <h1>Send Schedule</h1>
+                </div>
+                <div role="main" class="ui-content">
+                    <h3 align="center">Please enter the email address for the schedule to be send:</h3>
+                    <input type="text" id='email' data-theme='c' name="name" id="basic" value=""/>
+                    <p id='errorEmail'></p> 
+                    <a href="#" id="cancelEmail" class="ui-btn ui-corner-all ui-shadow ui-btn-inline ui-btn-b" data-rel="back">Cancel</a>
+                    <a href="#popupSuccess" data-rel="popup" data-role="button" id='sendEmail' 
+                        class="ui-btn ui-corner-all ui-shadow ui-btn-inline ui-btn-b" data-transition="slidefade">Send</a>
+                </div>
+                <div data-role="popup" id="datePopup" data-position-to="window" class="ui-content" style="height:400px;">
+                     <input type="date" data-role="datebox" name="somedate" data-options='{"mode": "datebox", "overrideDateFormat": "%m/%d/%Y"}' />
+                </div>
+                <div data-role="popup" id="popupSuccess" data-position-to="window" class="ui-content">
+                    <p id='popupMessage'>Your email has been sent!</p>
+                    <a href="#" data-rel="back" data-role="button" data-theme="a" data-icon="delete" data-iconpos="notext" class="ui-btn-right">Close</a>
+                </div>
+            </div>
+            <footer data-role="footer" data-tap-toggle="false" data-position="fixed" data-theme="b" >
+                <nav data-role="navbar" data-theme="a">
+                    <ul>
+                        <li><a href="#schedule" data-icon="calendar" class="ui-btn-active ui-state-persist">Schedule</a></li>
+                        <li><a href="#standingsPage" data-transition="fade" data-icon="bullets">Standings</a></li>
+                        <li><a href="#teamsPage" name="teamsPage" data-transition="fade" data-icon="info">Teams</a></li>
+                    </ul>
+                </nav>
+
+            </footer>
+            
+            <div id="spinner">
+                
+            </div>
+        </div>
+        <div data-role="page" id="standingsPage" data-transition="slideup" data-title="NBA Standings">
+            <title>NBA App</title>
+            <header data-role="header" data-theme="b">
+                <img id="logo" src="images/nba.png"> 
+                <a id='refreshStandings' href="#" data-role="button" class="ui-btn-right" data-inline="true" data-iconpos="notext" data-icon="refresh"></a>
+                <h1>Standings</h1>
+                <div data-role="navbar">
+                    <ul>
+                        <li><a id="easternNav" href="#" class="ui-btn-active ui-state-persist">Eastern</a></li>
+                        <li><a id="westernNav" href="#">Western</a></li>
+                    </ul>
+                </div>
+            </header>
+            <article data-role="content">
+                <h5 id="offlineStandingsError" class="ui-bar ui-bar-a">Please connect to the internet for the updated standings</h5>
+                <table data-role="table" data-mode="columntoggle" class="ui-body-d ui-shadow table-stripe ui-responsive" id="standingsTable">
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>TEAM</th>
+                            <th data-priority="1" class="ui-table-priority-1">W</th>
+                            <th data-priority="1" class="ui-table-priority-1">L</th>
+                            <th data-priority="2" class="ui-table-priority-2">PCT</th>
+                            <th data-priority="3" class="ui-table-priority-3">GB</th>
+                            <th data-priority="2" class="ui-table-priority-2">L10</th>
+                            <th data-priority="3" class="ui-table-priority-3">STRK</th>
+                        </tr>
+                    </thead>
+                    <tbody id="westernTable">
+                    </tbody>
+                    <tbody id="easternTable">
+                    </tbody>
+                </table>
+                <h3 class="error"></h3>
+            </article>
+            <footer data-role="footer" data-theme="b" data-tap-toggle="false" data-position="fixed">
+                <nav data-role="navbar" data-theme="b">
+                    <ul>
+                        <li><a href="#schedule" data-transition="fade" data-direction="reverse" data-icon="calendar">Schedule</a></li>
+                        <li><a href="#standingsPage" data-icon="bullets" class="ui-btn-active ui-state-persist">Standings</a></li>
+                        <li><a href="#teamsPage" data-transition="fade" data-icon="info">Teams</a></li>
+                    </ul>
+                </nav>
+            </footer>
+            <div id="spinner">
+                
+            </div>
+        </div>  
+        <div data-role="page" id="teamsPage" data-title="NBA Teams">
+            <title>NBA App</title>
+            <header data-role="header" data-theme="b">
+                <img id="logo" src="images/nba.png"> 
+                <a id='refreshTeams' href="#" data-role="button" class="ui-btn-right"data-inline="true" data-iconpos="notext" data-icon="refresh"></a>
+                <h1>Teams</h1>
+            </header>
+            <article data-role="content">
+                <ul data-role="listview" data-filter="true" id="teams-list"></ul>
+                <h3 class='error'></h3>
+            </article>
+            <footer data-role="footer" data-tap-toggle="false" data-position="fixed" data-theme="b">
+                <nav data-role="navbar" data-theme="a">
+                    <ul>
+                        <li><a href="#schedule" data-transition="fade" data-direction="reverse" data-icon="calendar">Schedule</a></li>
+                        <li><a href="#standingsPage" data-transition="fade" data-direction="reverse" data-icon="bullets">Standings</a></li>
+                        <li><a href="#teamsPage" data-icon="info" class="ui-btn-active ui-state-persist">Teams</a></li>
+                    </ul>
+                </nav>
+            </footer> 
+            <div id="spinner">
+                
+            </div>
+        </div>
+        <div data-role="page" id="teamPage">
+            <header data-role="header" data-theme="b">
+                <h1>Team</h1>
+                <a id="backButton" href="#teamsPage" data-transition="slidedown" data-icon="back" data-iconpos="notext">Teams
+                </a>
+                <a id="favourite" data-rel="popup" data-role="button" class="ui-btn-right" data-inline="true" data-iconpos="notext" data-icon="heart"></a>
+            </header>
+            <div id="teamContent" data-role="content">
+                    <div id="teamDetails"></div>
+
+                    <div id="teamRoster"></div>
+            </div>
+            <h3 id='errorTeam'></h3>
+            <div data-role="popup" id="popupMenu" data-position-to="window" data-theme="b" style="max-width:400px;">
+                <div data-role="header" data-theme='a'>
+                    <h1>Search</h1>
+                </div>
+                <div role="main" class="ui-content">
+                    <h3 align="center">Where would you like to </br>search?</h3>
+                    <ul data-role="listview" style="min-width:100px;">
+                        <li data-icon='search'><a id="googleSearch" href="#" target="_blank">Search Google</a></li>
+                        <li data-icon="search"><a id="wikiSearch" href="#" target="_blank">Search Wikipedia</a></li>
+                        <li data-icon="search"><a id="nbaSearch" href="#" target="_blank">Search NBA</a></li>
+                    </ul>  
+                </div>
+            </div>    
+            <div data-role="popup" id="mapPopup" data-position-to="window" data-theme="b" style="max-width:400px;">
+                <div data-role="header" data-theme='a'>
+                    <h1>Stadium</h1>
+                </div>
+                <div id="mapContainer" role="main" class="ui-content">
+                    
+                </div>
+            </div> 
+        </div>
+    </body> 
+</html>

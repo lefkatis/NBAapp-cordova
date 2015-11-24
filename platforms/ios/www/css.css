@@ -1,0 +1,236 @@
+<style>
+    #timeDiv {
+        width: 10px;
+        height: 10px;
+        background-color: #f00;
+    }
+
+    #mapContainer iframe{
+        width: 100%;
+    }
+    #splash {
+        display: block;
+        margin: 0 auto;
+        height: 100%;
+        
+    }
+    #splashPage {
+        height: 100%;
+        background-color: orange;
+    }
+    .ui-loader .ui-icon-loading {
+        /*background-color: red !important;*/
+    }
+
+    .h2 {
+        float:none;
+        height: auto;
+    }
+    #logo{   
+        float: left;
+        display: inline-block;
+        margin-top: 0.3em;
+        margin-left: 0.5em;
+        height:30px;
+        width:33px;
+    }
+    /*TEAMS PAGE*/
+    #standingsPage article{
+        padding-top: 6px;
+    }
+
+    #offlineStandingsError{
+        margin:0;
+        margin-bottom: 2%;
+        background-color: #FF9900;
+        text-shadow:none;
+        display: none;
+        text-align: center;
+    }
+    .errorPage{
+        text-align: center;
+    }
+    .error{
+        margin:0;
+        margin-bottom: 2%;
+        background-color: #FF9900;
+        text-shadow:none;
+        display: none;
+        text-align: center;
+    }
+    #errorTeam{
+        margin:0;
+        margin-bottom: 2%;
+        background-color: #FF9900;
+        text-shadow:none;
+        display: none;
+        text-align: center;
+    }
+    #teams article{
+        padding-top: 0px;
+    }
+    #share{
+        float: right;
+        display: inline-block;
+        margin-right: 2.5em;
+    }
+    /*#calendar{
+        float: right;
+        display: inline-block;
+        margin-right: 5em;
+    }*/
+    #refresh{
+        float: right;
+        display: inline-block;
+    }
+
+    .ui-select{
+        float:right;
+        display: inline-block;
+    }
+ 
+    #teamList {
+        padding-bottom: 0px;
+        padding-top: 0px;
+    }
+ 
+    #teamList img{
+        position:absolute; 
+        top:0; 
+        bottom:0; 
+        left:0; 
+        margin:auto; 
+    }
+    /*TEAM PAGE*/
+    #popupMenu h1{
+        margin-left: 0px;
+        margin-right: 0px;
+    }       
+    #mapPopup h1{
+        margin-left: 0px;
+        margin-right: 0px;
+    } 
+
+    #mapPopup div iframe{
+        width: 90%;
+    } 
+    .description {
+        padding: 0 10px;
+        font-size: 0.9em;
+    }
+    #teamContent div{
+        text-align: center;
+        width: 100%;
+    }
+    #teamRoster{
+        background-color: white !important;
+    }
+
+    #teamImage{
+        max-width: 60%;
+    }
+
+    #teamDetails p{
+        text-shadow:none;
+    }
+
+    /*SCHEDULE*/
+
+    #refreshScores{
+        margin: 0px;
+    }
+    #offlineScheduleError{
+        margin:0;
+        margin-bottom: 2%;
+        background-color: #FF9900;
+        text-shadow:none;
+        display: none;
+    }
+    #schedule h3{
+        text-align: center;
+    }
+    #mailPopup div{
+        align-content: center;
+    }
+    #schedule article{
+        padding-top: 0px;
+
+    }
+    #daysNavigation{
+        text-align: center;
+    }
+    #dateTitleUTC {
+        font-weight: bold;
+        display: inline-block;
+    }
+    #previousDayButton{
+        float: left;
+        display: inline-block;
+    }
+    #nextDayButton{
+        float: right;
+        display: inline-block;
+    }
+
+    /*SCHEDULE TABLE content */
+    #gamesTable tr{
+        width: 100%;
+    }
+    .gameTime{
+        width: 25%;
+        padding-right: 0% !important;
+        padding-left: 0% !important;
+    }
+    .homeTeam {
+        width: 37.5%;
+        padding-left: 1% !important;
+        padding-right: 1% !important;
+
+    }
+    .awayTeam {
+        width: 37.5%;
+        padding-left: 1% !important;
+        padding-right: 1% !important;
+    }
+    .homeTeam tr, .homeTeam td, .awayTeam tr, .awayTeam td{
+        text-align: center !important;
+    }
+    .homeTeam img{
+        max-width: 3em;
+        padding-left: 10px;
+    }
+    .awayTeam img{
+        max-width: 3em;
+        padding-right: 10px;
+    }
+    #scheduleTable td, #scheduleTable th{
+        vertical-align: middle;
+        text-align: center !important;
+
+    }
+    #scheduleTable td img, #scheduleTable td p{
+        display: inline-block;
+        vertical-align: middle;
+    }
+
+
+    /*other*/
+
+    #teamPage header h1 {
+        margin-left: 40px;
+        margin-right: 40px;
+    }
+    .ui-table-reflow td, .ui-table-reflow th{
+        text-align: left;
+        vertical-align: left !important;
+    }
+    .ui-table-reflow td img{
+          vertical-align: middle;
+    }
+    
+
+    .ui-table-columntoggle-btn {
+        display: none !important;
+    }
+
+</style>
